@@ -212,21 +212,6 @@ return [
                     ]
                 ]
             ],
-            'type' => [
-                'require' => false,
-                'allow_empty' => true,
-                'name' => 'type',
-                'filters' => [
-                    'stringtrim' =>  [
-                        'name' => 'stringtrim',
-                    ]
-                ],
-                'validators' => [
-                    'PlaceTypesValidator' => [
-                        'name' => 'PlaceTypesValidator'
-                    ]
-                ]
-            ],
             'geo_coordinate' => [
                 'name' => 'geo_coordinate',
                 'type' => 'Strapieno\Place\Model\InputFilter\DefaultGeoCoordiateInputFilter'
