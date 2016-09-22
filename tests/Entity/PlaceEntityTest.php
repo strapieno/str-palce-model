@@ -21,7 +21,7 @@ class PlaceEntityTest extends \PHPUnit_Framework_TestCase
     public function testGetSetDescription()
     {
         $input = "test";
-        $this->object->setType($input);
-        $this->assertSame($input, $this->object->getType());
+        $this->object->setId($input);
+        $this->assertSame($input, $this->object->getId());
     }
 }
