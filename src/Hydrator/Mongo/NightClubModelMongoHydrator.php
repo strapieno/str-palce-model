@@ -40,7 +40,7 @@ class PlaceModelMongoHydrator extends DateHistoryHydrator
             new HasOneStrategy(new PostalAddressObject(), false)
         );
         $this->addStrategy(
-            'media',
+            'gallery',
             // FIXME library 2 param type function
             new HasManyStrategy(new MediaObject(), new RefIdentityCollection(), true)
         );
