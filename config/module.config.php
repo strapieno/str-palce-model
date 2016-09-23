@@ -25,15 +25,7 @@ return [
         'Place' => [
             'type' => 'Strapieno\Utils\Model\Entity\Place\PlaceEntity',
             'active_record_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
-        ],
-        'Place' => [
-            'type' => 'Strapieno\Place\Model\Entity\PlaceEntity',
-            'active_record_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
-        ],
-        'ClubPrive' => [
-            'type' => 'Strapieno\Place\Model\Entity\ClubPriveEntity',
-            'active_record_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
-        ],
+        ]
     ],
     'matryoshka-models' => [
         'Strapieno\Place\Model\PlaceModelService' => [
@@ -42,17 +34,11 @@ return [
             'object' => 'Place',
             'resultset' => 'Strapieno\Model\ResultSet\HydratingResultSet',
             'paginator_criteria' => 'Strapieno\Place\Model\Criteria\PlaceCollectionCriteria',
-            'prototype_strategy' => 'Matryoshka\Model\Object\PrototypeStrategy\ServiceLocatorStrategy',
             'hydrator' => 'Strapieno\Place\Model\Hydrator\PlaceModelMongoHydrator',
             'listeners' => [
                 'Strapieno\Utils\Model\Listener\DateAwareListener',
             ],
         ],
-    ],
-    'strapieno-array-validators' => [
-        'PlaceTypesValidator' => [
-            'name_key_array_config' => 'PlacesTypes'
-        ]
     ],
     'strapieno_input_filter_specs' => [
         'Strapieno\Place\Model\InputFilter\DefaultPostalAddressInputFilter' => [
