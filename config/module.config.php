@@ -23,7 +23,7 @@ return [
     ],
     'matryoshka-objects' => [
         'Place' => [
-            'type' => 'Strapieno\Place\Model\Entity\Place\PlaceEntity',
+            'type' => 'Strapieno\Place\Model\Entity\PlaceEntity',
             'active_record_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
         ]
     ],
