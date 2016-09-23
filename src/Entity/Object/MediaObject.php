@@ -1,7 +1,8 @@
 <?php
 namespace Strapieno\Place\Model\Entity\Object;
 
-use Strapieno\Utils\DataStructure\RefIdentityInteface;
+use Strapieno\Utils\DataStructure\RefIdentityInterface;
+use Strapieno\Utils\DataStructure\RefIdentityTrait;
 use Strapieno\Utils\Model\Object\AbstractObject;
 use Strapieno\Utils\Model\Object\Media\MediaInterface;
 use Strapieno\Utils\Model\Object\Media\MediaTrait;
@@ -12,17 +13,10 @@ use Zend\Stdlib\Hydrator\Filter\MethodMatchFilter;
 /**
  * Class MediaObject
  */
-class MediaObject extends AbstractObject implements MediaInterface, ObjectInterface, RefIdentityInteface
+class MediaObject extends AbstractObject implements MediaInterface, ObjectInterface, RefIdentityInterface
 {
     use MediaTrait;
-
-    /**
-     * @return mixed
-     */
-    public function getRefIdentity()
-    {
-        return $this->embedUrl;
-    }
+    use RefIdentityTrait;
 
     public function getHydrator()
     {
