@@ -16,7 +16,7 @@ use Strapieno\Utils\Hydrator\Strategy\NamingStrategy\MapUnderscoreNamingStrategy
 /**
  * Class PlaceModelMongoHydrator
  */
-class PlaceModelMongoHydrator extends DateHistoryHydrator
+    class PlaceModelMongoHydrator extends DateHistoryHydrator
 {
 
     public function __construct($underscoreSeparatedKeys = true)
@@ -40,7 +40,7 @@ class PlaceModelMongoHydrator extends DateHistoryHydrator
             new HasOneStrategy(new PostalAddressObject(), false)
         );
         $this->addStrategy(
-            'gallery',
+            'media',
             // FIXME library 2 param type function
             new HasManyStrategy(new MediaObject(), new RefIdentityCollection(), true)
         );
