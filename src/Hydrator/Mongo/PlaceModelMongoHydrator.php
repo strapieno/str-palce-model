@@ -9,9 +9,8 @@ use Strapieno\Place\Model\Entity\Object\GeoCoordinateObject;
 use Strapieno\Place\Model\Entity\Object\MediaObject;
 use Strapieno\Place\Model\Entity\Object\PostalAddressObject;
 use Strapieno\User\Model\Entity\Reference\UserReference;
-use Strapieno\Utils\DataStructure\RefIdentityCollection;
 use Strapieno\Utils\Hydrator\Mongo\DateHistoryHydrator;
-use Strapieno\Utils\Hydrator\Strategy\NamingStrategy\MapUnderscoreNamingStrategy;
+use Strapieno\Utils\Model\Object\Collection;
 
 /**
  * Class PlaceModelMongoHydrator
@@ -29,7 +28,7 @@ use Strapieno\Utils\Hydrator\Strategy\NamingStrategy\MapUnderscoreNamingStrategy
         );
 
         $aggregateRating = new AggregateRatingObject();
-        $aggregateRating->getHydrator()->addStrategy('partial', new SetTypeStrategy('array', 'array'));
+        $aggregateRatingDataStructure->getHydrator()->addStrategy('partial', new SetTypeStrategy('array', 'array'));
         $this->addStrategy(
             'aggregate_rating',
             new HasOneStrategy($aggregateRating, false)
@@ -42,7 +41,7 @@ use Strapieno\Utils\Hydrator\Strategy\NamingStrategy\MapUnderscoreNamingStrategy
         $this->addStrategy(
             'media',
             // FIXME library 2 param type function
-            new HasManyStrategy(new MediaObject(), new RefIdentityCollection(), true)
+            new HasManyStrategy(new MediaObject(), new Collection(), true)
         );
 
         $this->addStrategy(

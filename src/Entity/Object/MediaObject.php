@@ -1,8 +1,6 @@
 <?php
 namespace Strapieno\Place\Model\Entity\Object;
 
-use Strapieno\Utils\DataStructure\RefIdentityInterface;
-use Strapieno\Utils\DataStructure\RefIdentityTrait;
 use Strapieno\Utils\Model\Object\AbstractObject;
 use Strapieno\Utils\Model\Object\Media\MediaInterface;
 use Strapieno\Utils\Model\Object\Media\MediaTrait;
