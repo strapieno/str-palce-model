@@ -5,6 +5,8 @@ use Strapieno\Utils\Model\Object\AbstractObject;
 use Strapieno\Utils\Model\Object\Media\MediaInterface;
 use Strapieno\Utils\Model\Object\Media\MediaTrait;
 use Strapieno\Utils\Model\Object\ObjectInterface;
+use Strapieno\Utils\Model\Object\RefIdentityInterface;
+use Strapieno\Utils\Model\Object\RefIdentityTrait;
 use Zend\Stdlib\Hydrator\Filter\FilterComposite;
 use Zend\Stdlib\Hydrator\Filter\MethodMatchFilter;
 
