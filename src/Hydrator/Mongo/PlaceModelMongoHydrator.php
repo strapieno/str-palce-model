@@ -28,7 +28,7 @@ use Strapieno\Utils\Model\Object\Collection;
         );
 
         $aggregateRating = new AggregateRatingObject();
-        $aggregateRatingDataStructure->getHydrator()->addStrategy('partial', new SetTypeStrategy('array', 'array'));
+        $aggregateRating->getHydrator()->addStrategy('partial', new SetTypeStrategy('array', 'array'));
         $this->addStrategy(
             'aggregate_rating',
             new HasOneStrategy($aggregateRating, false)
