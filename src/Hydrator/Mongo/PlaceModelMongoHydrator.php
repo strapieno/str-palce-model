@@ -38,11 +38,6 @@ use Strapieno\Utils\Model\Object\Collection;
             'postal_address',
             new HasOneStrategy(new PostalAddressObject(), false)
         );
-        $this->addStrategy(
-            'media',
-            // FIXME library 2 param type function
-            new HasManyStrategy(new MediaObject(), new Collection(), true)
-        );
 
         $this->addStrategy(
             'user_reference',
