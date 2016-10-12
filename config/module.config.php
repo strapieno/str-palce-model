@@ -18,7 +18,7 @@ return [
     'mongocollection' => [
         'DataGateway\Mongo\Place' => [
             'database' => 'Mongo\Db',
-            'collection' => 'Place',
+            'collection' => 'place',
         ],
     ],
     'matryoshka-objects' => [
