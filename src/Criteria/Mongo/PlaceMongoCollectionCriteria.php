@@ -8,5 +8,17 @@ use Matryoshka\Model\Wrapper\Mongo\Criteria\FindAllCriteria;
  */
 class PlaceMongoCollectionCriteria extends FindAllCriteria
 {
-
+    /***
+     * @param $hide
+     * @return $this
+     */
+    public function setHide($hide)
+    {
+        if (is_array($hide)) {
+            foreach ($hide as $item) {
+                $this->projectionFields[$item] = 0;
+            }
+        }
+        return $this;
+    }
 }
