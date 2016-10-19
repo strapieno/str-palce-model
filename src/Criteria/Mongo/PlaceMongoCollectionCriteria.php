@@ -14,6 +14,10 @@ class PlaceMongoCollectionCriteria extends FindAllCriteria
      */
     public function setHide($hide)
     {
+        if (is_string($hide) && strpos($hide, ',') !== false) {
+            $hide = explode(",", $hide);
+        }
+
         if (is_array($hide)) {
             foreach ($hide as $item) {
                 $this->projectionFields[$item] = 0;
