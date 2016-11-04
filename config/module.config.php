@@ -7,7 +7,7 @@ return [
         ],
         'invokables' => [
             'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet' => 'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet',
-            'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria' => 'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria'
+            'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria' => 'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria',
             'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria' => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
             'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria' => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
         ],
