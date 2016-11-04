@@ -1,13 +1,25 @@
 <?php
 return [
     'service_manager' => [
+        'abstract_factories' => [
+            'Matryoshka\Model\Wrapper\Mongo\Service\MongoDbAbstractServiceFactory',
+            'Matryoshka\Model\Wrapper\Mongo\Service\MongoCollectionAbstractServiceFactory'
+        ],
         'invokables' => [
-            'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria'
-                => 'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria'
+            'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet' => 'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet',
+            'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria' => 'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria'
+            'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria' => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
+            'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria' => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria',
         ],
         'aliases' => [
-            'Strapieno\Place\Model\Criteria\PlaceCollectionCriteria'
-                => 'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria'
+            'Strapieno\Model\ResultSet\HydratingResultSet' => 'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet',
+            'Strapieno\Model\Criteria\IsolatedActiveRecordCriteria' => 'Matryoshka\Model\Wrapper\Mongo\Criteria\Isolated\ActiveRecordCriteria',
+            'Strapieno\Place\Model\Criteria\PlaceCollectionCriteria' => 'Strapieno\Place\Model\Criteria\Mongo\PlaceMongoCollectionCriteria',
+            'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria' => 'Matryoshka\Model\Wrapper\Mongo\Criteria\ActiveRecord\ActiveRecordCriteria'
+        ],
+        'shared' => [
+            // Do not share instance of ResultSet to avoid collisions on prototype strategies,
+            'Matryoshka\Model\Wrapper\Mongo\ResultSet\HydratingResultSet' => false,
         ]
     ],
     'mongodb' => [
